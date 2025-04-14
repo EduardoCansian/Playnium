@@ -7,14 +7,22 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="logo-container">
-    <img src="./ico/playnium_logo.png" alt="playnium logo" class="logo">
+
+  <!-- Header com logo centralizada -->
+  <header>
+    <div class="container">
+      <div class="logo-container">
+        <img src="./ico/playnium_logo.png" alt="playnium logo" class="logo">
+      </div>
     </div>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main class="container main"> <!-- Usando .container aqui também -->
     <h1>Buscar Jogos</h1>
-    
+
     <form id="search-form">
-      <ul style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+      <ul class="ul-search">
         <li><input type="text" id="search-input" placeholder="Buscar por nome..."></li>
         <li>
           <select id="genre-select">
@@ -35,17 +43,21 @@
             <option value="18">Xbox Series S/X</option>
           </select>
         </li>
-        <li><button type="submit" id="buscar"> Buscar</button></li>
-      <div id="mensagem" style="color: #ff5050; margin-top: 15px;"></div>
+        <li><button type="submit" id="buscar">Buscar</button></li>
+        <div id="mensagem"></div>
       </ul>
     </form>
+
     <div id="loader" style="display: none;"></div>
     <ol id="games-container"></ol> <!-- Lista ordenada para mostrar ranking dos jogos -->
+  </main>
 
-    <footer>Dados fornecidos por <a href="https://rawg.io" target="_blank">RAWG</a></footer>
-  </div>
+  <!-- Rodapé -->
+  <footer>
+    Dados fornecidos por <a href="https://rawg.io" target="_blank">RAWG</a>
+    <p>© 2025 Playnium</p>
+  </footer>
 
-  <script type="module" src="script.js"></script>
-
+  <script type="module" src="/js/main.js"></script>
 </body>
 </html>

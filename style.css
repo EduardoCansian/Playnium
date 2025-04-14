@@ -1,3 +1,4 @@
+/**/
 body {
     background: linear-gradient(145deg, #1e1e2f, #121212);
     color: #fff;
@@ -9,8 +10,8 @@ body {
   .logo-container {
     display: flex;
     justify-content: center; 
-    margin-top: 0.001px; 
-    margin-bottom: 90px;
+    
+    
   }
 
   .logo {
@@ -19,8 +20,24 @@ body {
 
   }
 
+  #mensagem{
+
+    color: #ff5050; 
+    margin-top: 15px;
+  
+  }
+  .ul-search{
+    list-style: none; 
+    padding: 0; 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+    justify-content: center;
+
+  }
+  
   .container {
-    min-height: 100vh;
+   
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
@@ -37,7 +54,9 @@ body {
     font-weight: bold;
     text-shadow: 2px 2px 5px #000;
   }
-  
+  .main{
+    padding-bottom: 180px;
+  }
   form {
     display: flex;
     flex-wrap: wrap;
@@ -88,19 +107,43 @@ body {
   
   .game img {
     width: 150px;
+    height: 150px;
+    object-fit: cover;
     border-radius: 10px;
   }
+  
   
   .game-info {
     flex-grow: 1;
   }
+
+  .ler-mais-btn {
+    margin-left: 8px;
+    padding: 4px 8px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .ler-mais-btn:hover {
+    background-color: #0056b3;
+  }
+  
   
   footer {
     text-align: center;
     margin-top: 50px;
     font-size: 0.8em;
     opacity: 0.6;
+    background: linear-gradient(145deg, #1e1e2f, #121212);
+    color: #fff;
+    padding: 20px 0;
   }
+  
 
   .filtros {
   display: flex;
