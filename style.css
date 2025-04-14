@@ -1,0 +1,113 @@
+body {
+    background: linear-gradient(145deg, #1e1e2f, #121212);
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    min-height: 100vh;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px #000;
+  }
+  
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  input, select, button {
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+  }
+  
+  button {
+    background-color: #ff6600;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #e65c00;
+    transform: scale(1.05);
+  }
+  
+  #games-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .game {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .game img {
+    width: 150px;
+    border-radius: 10px;
+  }
+  
+  .game-info {
+    flex-grow: 1;
+  }
+  
+  footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.8em;
+    opacity: 0.6;
+  }
+
+  .filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  input, select, button {
+    width: 90%;
+    margin: 5px 0;
+  }
+}
+
+#loader {
+  border: 6px solid rgba(255, 255, 255, 0.1);
+  border-top: 6px solid #ff6600;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+  
