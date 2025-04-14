@@ -6,6 +6,19 @@ body {
     padding: 0;
   }
   
+  .logo-container {
+    display: flex;
+    justify-content: center; 
+    margin-top: 0.001px; 
+    margin-bottom: 90px;
+  }
+
+  .logo {
+    width: 260px;
+    align-self: center;
+
+  }
+
   .container {
     min-height: 100vh;
     max-width: 1000px;
@@ -39,17 +52,23 @@ body {
     border-radius: 8px;
     border: none;
     font-size: 16px;
+    transition: all 0.3s ease;
+  }
+
+  input:focus, select:focus {
+    box-shadow: 0 0 5px #00BFE8;;
+    outline: none;
   }
   
   button {
-    background-color: #ff6600;
+    background-color: #00BFE8;
     color: white;
     cursor: pointer;
     transition: transform 0.2s ease, background-color 0.3s ease;
   }
 
   button:hover {
-    background-color: #e65c00;
+    background-color: #00BFE8;
     transform: scale(1.05);
   }
   
@@ -98,7 +117,7 @@ body {
 
 #loader {
   border: 6px solid rgba(255, 255, 255, 0.1);
-  border-top: 6px solid #ff6600;
+  border-top: 6px solid #00BFE8;
   border-radius: 50%;
   width: 40px;
   height: 40px;
