@@ -17,14 +17,19 @@
     <title>Playnium | Login</title>
 </head>
 <body>
-    
-    <div class="container login-container">
+    <header>
+        <div class="logo-login">
+            <img src="./ico/playnium_logo.png" alt="logo">
+        </div>
+    </header>
+    <main>
+       <div class="container login-container">
         
         <div class="row">
             
-            <div class="col-lg-6 col-sm-12 login-form-1">
+            <div id="form-login" class="col-lg-6 col-sm-12 login-form-1">
                 
-                <h3>Bem vindo ao Playtium</h3>
+                <h3>Bem vindo ao Playnium</h3>
                 <h3 class="login-name">Login</h3>
                 
                 <div class="form-group">
@@ -32,7 +37,7 @@
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control" placeholder="Senha" id="inputsenha" />
-                    <i class="bi bi-eye" id="btn-senha" onclick="mostraSenha()"></i>
+                    <i id="btn-senha" onclick="mostraSenha()"></i>
                 </div>
                 <div class="form-group">
                     <p class="mensagem-cadastro"></p>
@@ -50,7 +55,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
+    </main>
+    
 
     <!--Linkagem do Javascript-->
     <script src=""></script>

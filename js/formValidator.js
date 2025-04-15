@@ -5,7 +5,7 @@ export function validarFormulario() {
     const mensagem = document.getElementById("mensagem");
   
     if (!nome && !genero && !plataforma) {
-      mensagem.innerText = "Preencha pelo menos um campo para buscar.";
+      mensagem.innerText = "Preencha pelo menos um campo para realizar a busca.";
       return false;
     }
   

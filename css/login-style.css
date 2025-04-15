@@ -1,11 +1,23 @@
 html, body{
-    background-color: #666;
+    background: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 /* Estilos gerais para o container de login */
 .login-container {
-    margin-top: 12%;
+    margin-top: 2%;
     margin-bottom: 5%;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.logo-login img {
+    width: 250px;
+    margin: 20px auto;
+    display: block;
 }
 
 /* Estilo para o campo de senha e ícone */
@@ -15,13 +27,13 @@ html, body{
 }
 
 #inputsenha {
-    padding-right: 35px; /* Espaço extra à direita para o ícone */
+    padding-right: 10px; /* Espaço extra à direita para o ícone */
 }
 
 /* Ícone do olho dentro do campo de senha */
 #btn-senha {
     position: absolute;
-    right: 10px; 
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
@@ -90,6 +102,12 @@ html, body{
     border-radius: 1.5rem;
     padding: 2%;
     margin-top: 5%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btnSubmit:hover {
+   transform: scale(1.05);
 }
 
 .btnForgetPwd {
@@ -112,3 +130,10 @@ html, body{
     color: #9dccfc;
     font-weight: 600;
 }
+
+@media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      margin: 30px;
+    }
+  }
