@@ -3,6 +3,7 @@ html, body{
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
+  background: linear-gradient(120deg, #1e1e2f, #2a2a4f);
 }
 
 /* Estilos gerais para o container de login */
@@ -85,7 +86,14 @@ html, body{
     padding: 9%;
     background: linear-gradient(145deg, #1e1e2f, #121212);
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1.5rem;
 }
+
+.icon-top {
+    font-size: 48px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
 
 .login-form-cadastro h3 {
     text-align: center;
@@ -130,6 +138,8 @@ html, body{
     color: #9dccfc;
     font-weight: 600;
 }
+
+
 
 @media (max-width: 768px) {
     .container {

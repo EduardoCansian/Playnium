@@ -12,4 +12,19 @@ export function validarFormulario() {
     mensagem.innerText = "";
     return true;
   }
+
+document.getElementById("login").addEventListener("click", function (e) {
+  e.preventDefault(); // impede o envio automático
+
+  const cpf = document.getElementById("cpf").value.trim();
+  const senha = document.getElementById("inputsenha").value.trim();
+
+  if (cpf === "" || senha === "") {
+    alert("Por favor, preencha todos os campos.");
+    return;
+  }
+  else{
+     window.location.href = "./html/playnium.html"; // redireciona se os dados estiverem corretos
+  }
   
+});

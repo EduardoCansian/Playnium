@@ -24,43 +24,33 @@
     </header>
     <main>
        <div class="container login-container">
-        
-        <div class="row">
-            
-            <div id="form-login" class="col-lg-6 col-sm-12 login-form-1">
-                
-                <h3>Bem vindo ao Playnium</h3>
-                <h3 class="login-name">Login</h3>
-                
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="CPF" value="" />
+            <div class="row">
+                <div id="form-login" class="col-lg-6 col-sm-12 login-form-1">
+                    <h3>Bem vindo ao Playnium</h3>
+                    <h3 class="login-name">Login</h3>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="CPF" id="cpf" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Senha" id="inputsenha" />
+                            <i id="btn-senha" onclick="mostraSenha()"></i>
+                        </div>
+                        <div class="form-group">
+                            <p class="mensagem-cadastro"></p>
+                            <button type="submit" class="btnSubmit" id="login">Login</button>
+                        </div>
                 </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Senha" id="inputsenha" />
-                    <i id="btn-senha" onclick="mostraSenha()"></i>
-                </div>
-                <div class="form-group">
-                    <p class="mensagem-cadastro"></p>
-                    <a href="./html/playnium.html"><input type="submit" class="btnSubmit" value="Login" id="login"/></a>
-                </div>
-                
-            </div>
-            <div class="col-lg-6 col-sm-12 login-form-2">
-                <h3>Ainda não tem cadastro?</h3>
-                <p>Faça o cadastro agora mesmo</p>
-        
-                <div class="form-group">
+                <div class="col-lg-6 col-sm-12 login-form-2">
+                    <h3>Ainda não tem cadastro?</h3>
+                    <p>Faça o cadastro agora mesmo</p>
+                    <div class="form-group">
                         <a href="./html/cadastro.html"><input type="submit" class="btnSubmit" value="Fazer Cadastro " /></a>
                     </div>
                 </div>
             </div>
         </div>
-    </div> 
     </main>
-    
-
     <!--Linkagem do Javascript-->
-    <script src=""></script>
-
+    <script src="formValidator.js"></script>
 </body>
 </html>
