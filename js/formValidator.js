@@ -4,9 +4,10 @@ document.getElementById("login").addEventListener("click", function (e) {
 
   const cpf = document.getElementById("cpf").value.trim();
   const senha = document.getElementById("inputsenha").value.trim();
+  const msg = document.getElementById("msg");
 
   if (cpf === "" || senha === "") {
-    alert("Por favor, preencha todos os campos.");
+    msg.innerText = "Por favor, preencha todos os campos.";
     return;
   }
   else{
