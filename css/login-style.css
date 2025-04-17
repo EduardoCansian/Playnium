@@ -64,6 +64,13 @@ html, body{
 #msg {
     color: #ec2323;
     margin-top: 25px;
+    font-size: 15px;
+}
+
+#msg-cadastro {
+    color: #ec2323;
+    margin-top: 25px;
+    font-size: 15px;
 }
 
 /* Outros estilos do layout */
@@ -109,6 +116,7 @@ html, body{
     background: linear-gradient(145deg, #1e1e2f, #121212);
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
     border-radius: 1.5rem;
+    margin-top:auto;
 }
 
 .row-cadastro {

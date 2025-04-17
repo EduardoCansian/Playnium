@@ -16,6 +16,25 @@ document.getElementById("login").addEventListener("click", function (e) {
   
 });
 
+document.getElementById("cadastro").addEventListener("click", function(e){
+  e.preventDefault();
+
+  const nome = document.getElementById("nome").value.trim();
+  const Cpf = document.getElementById("cpf").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const telefone = document.getElementById("telefone").value.trim();
+  const Senha = document.getElementById("senha").value.trim();
+  const mensage = document.getElementById("msg-cadastro");
+
+  if(nome === "" && Cpf === "" && email === "" && telefone === "" && Senha === "" ){
+    mensage.innerText = "Por favor, preencha todos os campos.";
+    return;
+  }
+  else{
+    window.location.href = "./index.html";
+  }
+});
+
 function validarFormulario() {
   const nome = document.getElementById("search-input").value.trim();
   const genero = document.getElementById("genre-select").value;
