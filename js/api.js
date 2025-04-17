@@ -33,11 +33,25 @@ export async function buscarDetalhesDoJogo(id) {
   try {
     const res = await fetch(`${BASE_URL}/${id}?key=${API_KEY}`);
     const data = await res.json();
-    return data.description_raw;
+
+    const descricao = data.description_raw || "Descrição não disponível.";
+
+    const generos = data.genres
+      ? data.genres.map((genero) => genero.name)
+      : ["Não disponível"];
+
+    return {
+      descricao,
+      generos,
+    };
   } catch (err) {
     console.error("Erro ao buscar detalhes:", err);
-    return "Descrição não disponível.";
+    return {
+      descricao: "Descrição não disponível.",
+      generos: ["Não disponível"],
+    };
   }
 }
+
 
 

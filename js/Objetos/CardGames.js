@@ -1,7 +1,6 @@
 import { buscarDetalhesDoJogo } from "../api.js";
 
-class CardGame {  
-
+class CardGame {
   constructor(Imagem, Nome, Nota, Classificacao, Plataforma, Id) {
     this.Imagem = Imagem;
     this.Nome = Nome;
@@ -16,6 +15,7 @@ class CardGame {
     gameElement.className = "game";
 
     const idDescricao = `desc-${this.Id}`;
+    const idGeneros = `generos-${this.Id}`;
 
     gameElement.innerHTML = `
       <img src="${this.Imagem}" alt="${this.Nome}">
@@ -24,6 +24,7 @@ class CardGame {
         <p><strong>Nota:</strong> ${this.Nota} / 5</p>
         <p><strong>Classificação:</strong> ${this.Classificacao}</p>
         <p><strong>Plataformas:</strong> ${this.Plataforma}</p>
+        <p id="${idGeneros}"><strong>Gêneros:</strong> Carregando...</p>
         <p id="${idDescricao}"><strong>Descrição:</strong> Carregando...</p>
       </div>
     `;
@@ -31,9 +32,19 @@ class CardGame {
     container.appendChild(gameElement);
 
     try {
-      const descricao = await buscarDetalhesDoJogo(this.Id);
+      const detalhes = await buscarDetalhesDoJogo(this.Id);
       const descricaoElement = document.getElementById(idDescricao);
+      const generosElement = document.getElementById(idGeneros);
 
+      // Preenche os gêneros
+      if (detalhes.generos && detalhes.generos.length > 0) {
+        generosElement.innerHTML = `<strong>Gêneros:</strong> ${detalhes.generos.join(", ")}`;
+      } else {
+        generosElement.innerHTML = `<strong>Gêneros:</strong> Não disponível`;
+      }
+
+      // Preenche a descrição
+      const descricao = detalhes.descricao;
       if (descricao.length > 100) {
         const resumo = descricao.slice(0, 100) + "...";
         const botao = document.createElement("button");
@@ -42,7 +53,8 @@ class CardGame {
 
         let expandido = false;
 
-        botao.addEventListener("click", () => {
+        botao.addEventListener("click", (event) => {
+          event.stopPropagation(); // evita que o clique no botão acione o clique no card
           expandido = !expandido;
           descricaoElement.innerHTML = `<strong>Descrição:</strong> ${expandido ? descricao : resumo}`;
           descricaoElement.appendChild(botao);
@@ -55,12 +67,15 @@ class CardGame {
         descricaoElement.innerHTML = `<strong>Descrição:</strong> ${descricao}`;
       }
     } catch (err) {
-      console.error("Erro ao buscar descrição:", err);
-      const descricaoElement = document.getElementById(idDescricao);
-      if (descricaoElement) {
-        descricaoElement.innerHTML = `<strong>Descrição:</strong> Não disponível`;
-      }
+      console.error("Erro ao buscar detalhes:", err);
+      document.getElementById(idDescricao).innerHTML = `<strong>Descrição:</strong> Não disponível`;
+      document.getElementById(idGeneros).innerHTML = `<strong>Gêneros:</strong> Não disponível`;
     }
+
+    // Evento de clique no card
+    gameElement.addEventListener("click", () => {
+      window.location.href = `jogo.html?id=${this.Id}`;
+    });
   }
 }
 
