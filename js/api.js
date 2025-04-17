@@ -2,11 +2,11 @@ const API_KEY = "c46d0f85532b4ec6a3944b6377b828e5";
 const BASE_URL = "https://api.rawg.io/api/games";
 
 export async function buscarJogos() {
-    
   const loader = document.getElementById("loader");
   const nome = document.getElementById("search-input").value;
   const genero = document.getElementById("genre-select").value;
   const plataforma = document.getElementById("platform-select").value;
+  const mensagem = document.getElementById("mensagem");
 
   mensagem.innerText = "";
   loader.style.display = "block";
@@ -29,6 +29,7 @@ export async function buscarJogos() {
   }
 }
 
+
 export async function buscarDetalhesDoJogo(id) {
   try {
     const res = await fetch(`${BASE_URL}/${id}?key=${API_KEY}`);
@@ -39,7 +40,6 @@ export async function buscarDetalhesDoJogo(id) {
     const generos = data.genres
       ? data.genres.map((genero) => genero.name)
       : ["Não disponível"];
-
     return {
       descricao,
       generos,
