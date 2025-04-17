@@ -24,6 +24,7 @@ html, body{
   }
 
 /* Estilos gerais para o container de login */
+
 .login-container {
     margin-top: 1%;
     margin-bottom: 5%;
@@ -33,6 +34,7 @@ html, body{
 }
 
 .logo-login img {
+    margin-top: 2%;
     width: 250px;
     margin: auto;
     display: block;
@@ -73,10 +75,47 @@ html, body{
     font-size: 15px;
 }
 
+.cadastro-h3 {
+    padding-top: 20px;
+}
+
 /* Outros estilos do layout */
 .cadastro-container {
-    margin-bottom: 5%;
+    margin-bottom: 5%;    
+    position: relative;
+    top: -15px;
+
 }
+.erro-msg {
+    position: absolute;
+    background-color: #ff4d4d;
+    color: #fff;
+    padding: 4px 10px;
+    font-size: 0.85rem;
+    border-radius: 5px;
+    z-index: 1000;
+    white-space: nowrap;
+    transform: translateY(-5px);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.erro-input {
+    border: 2px solid #ff4d4d !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(-5px); }
+}
+
+
+.erro {
+    color: #ff4c4c;
+    font-size: 0.8em;
+    margin-top: 4px;
+    display: block;
+}
+
 
 .login-form-1 {
     padding: 9%;
@@ -87,11 +126,13 @@ html, body{
 .login-form-1 h3 {
     text-align: center;
     color: #fff;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .login-name {
-    margin-top: 7%;
-    margin-bottom: 12%;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 .login-form-2 {
@@ -116,7 +157,7 @@ html, body{
     background: linear-gradient(145deg, #1e1e2f, #121212);
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
     border-radius: 1.5rem;
-    margin-top:auto;
+    margin-top:5%;
 }
 
 .row-cadastro {
@@ -154,13 +195,14 @@ html, body{
    transform: scale(1.05);
 }
 
-.btnForgetPwd {
+.btnBack {
     color: #fff;
     font-weight: 600;
     text-decoration: none;
+    padding-bottom: 20px;
 }
 
-.btnForgetPwd:hover {
+.btnBack:hover {
     text-decoration: underline;
     color: #fff;
 }
@@ -171,15 +213,35 @@ html, body{
 }
 
 .mensagem-cadastro {
-    color: #9dccfc;
-    font-weight: 600;
+    color: red;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .container {
       flex-direction: column;
       margin: 30px;
     }
+    .login-container {
+        height: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .login-form-1,
+    .login-form-2 {
+        padding: 5%;
+        margin-bottom: 20px;
+    }
+    
+    .login-form-2 {
+        display: block; /* garante que a div reapareça se estava oculta */
+    }
+    html,body{
+        height: 200vh;
+    }
+    
   }

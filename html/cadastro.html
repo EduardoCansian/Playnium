@@ -16,52 +16,56 @@
     <div class="overlay"></div>
     <header>
         <div class="logo-login">
-            <img src="./ico/playnium_logo.png" alt="logo">
+            <img src="../ico/playnium_logo.png" alt="logo">
         </div>
     </header>
+    
     <main>
         <div class="container cadastro-container">
             <div class="row-cadastro">
                 <div class="col-12 login-form-cadastro">
                     <i class="fa fa-user-circle icon-top"></i>
-                    <h3>Cadastro</h3>
-                
+                    <h3 class="cadastro-h3">Cadastro</h3>
+
                     <div class="form-group form-group-cadastro">
-                        <input type="text" class="form-control" placeholder="Nome" id = "nome" />
+                        <input type="text" class="form-control" placeholder="Nome" id="nome" />
+                        <small class="erro" id="erro-nome"></small>
                     </div>
 
                     <div class="form-group form-group-cadastro">
-                        <input type="text" class="form-control" placeholder="CPF" id = "cpf" />
+                        <input type="text" class="form-control" placeholder="CPF" id="cpf" />
+                        <small class="erro" id="erro-cpf"></small>
                     </div>
 
                     <div class="form-group form-group-cadastro">
-                        <input type="text" class="form-control" placeholder="E-mail" id = "email" />
+                        <input type="email" class="form-control" placeholder="E-mail" id="email" />
+                        <small class="erro" id="erro-email"></small>
                     </div>
 
                     <div class="form-group form-group-cadastro">
-                        <input type="tel" class="form-control" placeholder="Telefone" id="telefone" />
+                        <input type="number" class="form-control" placeholder="Telefone" id="telefone" />
+                        <small class="erro" id="erro-telefone"></small>
                     </div>
 
                     <div class="form-group form-group-cadastro">
                         <input type="password" class="form-control" placeholder="Senha" id="senha" />
+                        <small class="erro" id="erro-senha"></small>
                     </div>
-
-                    <div id="msg-cadastro"></div>
 
                     <div class="form-group form-group-cadastro">
                         <p class="mensagem-cadastro"></p>
-                        <input type="submit" class="btnSubmit" value="Cadastro" id="cadastro"/>
+                        <input type="submit" class="btnSubmit" value="Cadastro" id="cadastro" />
                     </div>
-                
+
                     <div class="form-group form-group-cadastro">
-                        <a href="index.html" class="btnForgetPwd">Voltar para a tela de login</a>
+                        <a href="../index.html" class="btnBack">Voltar para a tela de login</a>
                     </div>
                 </div>
             </div>
         </div>
     </main>
     <!--Linkagem do Javascript-->
-    <script src="js/formValidator.js"></script>    
+    <script src="../js/formValidator.js"></script>
 
 </body>
 </html>
