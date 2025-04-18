@@ -1,5 +1,7 @@
+// Importa a função que busca os detalhes de um jogo
 import { buscarDetalhesDoJogo } from "../api.js";
 
+// Classe que representa o card de um jogo
 class CardGame {
   constructor(Imagem, Nome, Nota, Classificacao, Plataforma, Id) {
     this.Imagem = Imagem;
@@ -10,13 +12,16 @@ class CardGame {
     this.Id = Id;
   }
 
+  // Método assíncrono que cria e insere o card
   async CriarCard(container) {
     const gameElement = document.createElement("li");
     gameElement.className = "game";
 
+    // Gera IDs únicos para os elementos de descrição e gêneros, usando o ID do jogo
     const idDescricao = `desc-${this.Id}`;
     const idGeneros = `generos-${this.Id}`;
 
+    // Define o HTML do card 
     gameElement.innerHTML = `
       <img src="${this.Imagem}" alt="${this.Nome}">
       <div class="game-info">
@@ -29,21 +34,23 @@ class CardGame {
       </div>
     `;
 
+    // Adiciona o card ao container da página
     container.appendChild(gameElement);
 
     try {
+       // Busca informações detalhadas do jogo
       const detalhes = await buscarDetalhesDoJogo(this.Id);
       const descricaoElement = document.getElementById(idDescricao);
       const generosElement = document.getElementById(idGeneros);
 
-      // Preenche os gêneros
+      // Atualiza os gêneros
       if (detalhes.generos && detalhes.generos.length > 0) {
         generosElement.innerHTML = `<strong>Gêneros:</strong> ${detalhes.generos.join(", ")}`;
       } else {
         generosElement.innerHTML = `<strong>Gêneros:</strong> Não disponível`;
       }
 
-      // Preenche a descrição
+      // Atualiza a descrição
       const descricao = detalhes.descricao;
       if (descricao.length > 100) {
         const resumo = descricao.slice(0, 100) + "...";
@@ -54,16 +61,18 @@ class CardGame {
         let expandido = false;
 
         botao.addEventListener("click", (event) => {
-          event.stopPropagation(); // evita que o clique no botão acione o clique no card
+          event.stopPropagation(); // Evita que o clique no botão redirecione para outra página
           expandido = !expandido;
           descricaoElement.innerHTML = `<strong>Descrição:</strong> ${expandido ? descricao : resumo}`;
           descricaoElement.appendChild(botao);
           botao.textContent = expandido ? "Mostrar menos" : "Ler mais";
         });
 
+        // Exibe o resumo e adiciona o botão
         descricaoElement.innerHTML = `<strong>Descrição:</strong> ${resumo}`;
         descricaoElement.appendChild(botao);
       } else {
+        // Se a descrição for curta, exibe direto
         descricaoElement.innerHTML = `<strong>Descrição:</strong> ${descricao}`;
       }
     } catch (err) {
@@ -72,11 +81,12 @@ class CardGame {
       document.getElementById(idGeneros).innerHTML = `<strong>Gêneros:</strong> Não disponível`;
     }
 
-    // Evento de clique no card
+    // Redireciona para a página de detalhes do jogo
     gameElement.addEventListener("click", () => {
       window.location.href = `jogo.html?id=${this.Id}`;
     });
   }
 }
 
+// Exporta a classe para que possa ser usada em outros módulos
 export default CardGame;

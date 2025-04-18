@@ -1,11 +1,14 @@
-html, body{
+/* Geral */
+html,
+body {
     background: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(120deg, #1e1e2f, #2a2a4f);
 
-    background-image: url("/img/catalogo_games.jpg"); /* ajuste o caminho se necessário */
+    background-image: url("/img/catalogo_games.jpg");
+    /* ajuste o caminho se necessário */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -13,18 +16,19 @@ html, body{
     font-family: 'Poppins', sans-serif;
 }
 
+/* Imagem de fundo */
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* camada escura */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* camada escura */
     z-index: 0;
-  }
+}
 
-/* Estilos gerais para o container de login */
-
+/* Estilos gerais para o container de login*/
 .login-container {
     margin-top: 1%;
     margin-bottom: 5%;
@@ -38,7 +42,8 @@ html, body{
     width: 250px;
     margin: auto;
     display: block;
-    filter: drop-shadow(0 0 8px #00f0ff); /* Destacando a logo com luz azul neon*/
+    filter: drop-shadow(0 0 8px #00f0ff);
+    /* Destacando a logo com luz azul neon*/
 }
 
 /* Estilo para o campo de senha e ícone */
@@ -49,44 +54,50 @@ html, body{
 }
 
 #inputsenha {
-    padding-right: 10px; /* Espaço extra à direita para o ícone */
+    padding-right: 10px;
 }
 
-/* Ícone do olho dentro do campo de senha */
+.form-group input[type="password"] {
+    padding-right: 35px;
+}
+
 #btn-senha {
     position: absolute;
-    right: 10px;
+    right: 15px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
     font-size: 1.2em;
-    color: #666; /* Cor do ícone */
+    color: #666;
     z-index: 10;
 }
 
-#msg {
-    color: #ec2323;
-    margin-top: 25px;
-    font-size: 15px;
-}
-
-#msg-cadastro {
-    color: #ec2323;
-    margin-top: 25px;
-    font-size: 15px;
-}
-
+/* Outros estilos do layout */
 .cadastro-h3 {
     padding-top: 20px;
 }
 
-/* Outros estilos do layout */
 .cadastro-container {
-    margin-bottom: 5%;    
+    margin-bottom: 5%;
     position: relative;
     top: -15px;
 
 }
+
+/* Animação de fadeIn para mensagens */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-5px);
+    }
+}
+
+/* Estilização da mensagem de erro */
 .erro-msg {
     position: absolute;
     background-color: #ff4d4d;
@@ -104,12 +115,6 @@ html, body{
     border: 2px solid #ff4d4d !important;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(-5px); }
-}
-
-
 .erro {
     color: #ff4c4c;
     font-size: 0.8em;
@@ -117,7 +122,7 @@ html, body{
     display: block;
 }
 
-
+/* Formulário de login (lado esquerdo) */
 .login-form-1 {
     padding: 9%;
     background: linear-gradient(145deg, #1e1e2f, #121212);
@@ -142,6 +147,7 @@ html, body{
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 
+/* Formulário da direita (de ir para a página de criar conta)*/
 .login-form-2 h3 {
     text-align: center;
     margin-bottom: 12%;
@@ -154,11 +160,12 @@ html, body{
     color: #fff;
 }
 
+/* Formulário de cadastro */
 .login-form-cadastro {
     background: linear-gradient(145deg, #1e1e2f, #121212);
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
     border-radius: 1.5rem;
-    margin-top:5%;
+    margin-top: 5%;
 }
 
 .row-cadastro {
@@ -171,7 +178,7 @@ html, body{
     font-size: 48px;
     color: #fff;
     margin-bottom: 10px;
-  }
+}
 
 .login-form-cadastro h3 {
     text-align: center;
@@ -179,6 +186,7 @@ html, body{
     color: #fff;
 }
 
+/* Botão de cadastro */
 .btnSubmit {
     font-weight: 600;
     width: 50%;
@@ -193,9 +201,10 @@ html, body{
 }
 
 .btnSubmit:hover {
-   transform: scale(1.05);
+    transform: scale(1.05);
 }
 
+/* Botão de voltar */
 .btnBack {
     color: #fff;
     font-weight: 600;
@@ -213,36 +222,32 @@ html, body{
     margin-right: 20%;
 }
 
-.mensagem-cadastro {
-    color: red;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-
-
+/* Responsividade */
 @media (max-width: 1000px) {
     .container {
-      flex-direction: column;
-      margin: 30px;
+        flex-direction: column;
+        margin: 30px;
     }
+
     .login-container {
         height: auto;
         margin-top: 20px;
         margin-bottom: 20px;
     }
-    
+
     .login-form-1,
     .login-form-2 {
         padding: 5%;
         margin-bottom: 20px;
     }
-    
+
     .login-form-2 {
-        display: block; /* garante que a div reapareça se estava oculta */
+        display: block;
     }
-    html,body{
+
+    html,
+    body {
         height: 200vh;
     }
-    
-  }
+
+}

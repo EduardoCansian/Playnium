@@ -1,50 +1,52 @@
+/* Estilização Geral */
 body {
-    background-color: #1e1e2f;
-    color: #f5f5f5;
-    padding: 2rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-  
-  #detalhes-container {
-    background-color: #2a2a3d;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    max-width: 800px;
-    width: 100%;
-    padding: 2rem;
-    text-align: center;
-  }
-  
-  #detalhes-container img {
-    max-width: 100%;
-    border-radius: 8px;
-    margin: 1rem 0;
-  }
-  
-  #detalhes-container h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  #detalhes-container p {
-    margin-bottom: 0.75rem;
-    line-height: 1.5;
-  }
-  
-  a {
-    display: inline-block;
-    margin-top: 1.5rem;
-    text-decoration: none;
-    color: #00bfff;
-    font-weight: bold;
-    transition: 0.3s ease;
-  }
-  
-  a:hover {
-    color: #66d9ff;
-  }
-  
+  background-color: #1e1e2f;
+  color: #f5f5f5;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Detalhes dos jogos */
+#detalhes-container {
+  background-color: #2a2a3d;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  max-width: 800px;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+#detalhes-container img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+#detalhes-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#detalhes-container p {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+/* Tag âncora */
+a {
+  display: inline-block;
+  margin-top: 1.5rem;
+  text-decoration: none;
+  color: #00bfff;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+a:hover {
+  color: #66d9ff;
+}

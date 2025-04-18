@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <title>Playnium</title>
@@ -8,12 +9,13 @@
   <link rel="shortcut icon" href="../ico/playnium_control.png" type="image/x-icon">
 
   <!--Linkagem CSS-->
-  
+
   <link rel="stylesheet" href="../css/playnium-style.css">
 </head>
+
 <body>
 
-  <!-- Header com logo centralizada -->
+  <!-- Header / Logo -->
   <header>
     <div class="container">
       <div class="logo-container">
@@ -22,20 +24,29 @@
     </div>
   </header>
 
-  <!-- Conteúdo principal/Main -->
-  <main class="container main"> 
+  <!-- Conteúdo principal (busca de jogos)/Main -->
+  <main class="container main">
     <h1>Buscar Jogos</h1>
 
     <form id="search-form">
+      <!--Lista não ordenada para fazer a busca dos jogos-->
       <ul class="ul-search">
         <li><input type="text" id="search-input" placeholder="Buscar por nome..."></li>
         <li>
           <select id="genre-select">
             <option value="">Gênero</option>
             <option value="action">Ação</option>
+            <option value="indie">Indie</option>
             <option value="adventure">Aventura</option>
-            <option value="rpg">RPG</option>
-            <option value="sports">Esportes</option>
+            <option value="role-playing-games-rpg">RPG</option>
+            <option value="strategy">Estratégia</option>
+            <option value="shooter">Tiro</option>
+            <option value="casual">Casual</option>
+            <option value="simulation">Simulação</option>
+            <option value="puzzle">Puzzle</option>
+            <option value="arcade">Arcade</option>
+            <option value="platformer">Plataforma</option>
+            <option value="racing">Corrida</option>
           </select>
         </li>
         <li>
@@ -44,6 +55,8 @@
             <option value="4">PC</option>
             <option value="187">PS5</option>
             <option value="186">PS4</option>
+            <option value="18">PS3</option>
+            <option value="7">Nintendo Switch</option>
             <option value="1">Xbox One</option>
             <option value="18">Xbox Series S/X</option>
           </select>
@@ -53,8 +66,11 @@
       </ul>
     </form>
 
+    <!-- Imagem de carregamento -->
     <div id="loader" style="display: none;"></div>
-    <ol id="games-container"></ol> <!-- Lista ordenada para mostrar ranking dos jogos -->
+
+    <!-- Lista ordenada para mostrar os jogos -->
+    <ol id="games-container"></ol>
   </main>
 
   <!-- Rodapé/Footer -->
@@ -67,4 +83,5 @@
   <script type="module" src="../js/main.js"></script>
 
 </body>
+
 </html>
