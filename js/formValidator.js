@@ -1,3 +1,4 @@
+import { renderizarJogos } from "./dom.js";
 // Mostrar/ocultar senha
 function mostraSenha() {
   const senha = document.getElementById("inputsenha");
@@ -149,7 +150,7 @@ if (botaoLogin) {
   });
 }
 
-function validarFormulario() {
+export async function validarFormulario() {
   const nome = document.getElementById("search-input").value.trim();
   const genero = document.getElementById("genre-select").value;
   const plataforma = document.getElementById("platform-select").value;
@@ -159,7 +160,6 @@ function validarFormulario() {
     mensagem.innerText = "Preencha pelo menos um campo para realizar a busca.";
     return false;
   }
-
   mensagem.innerText = "";
   return true;
 }
