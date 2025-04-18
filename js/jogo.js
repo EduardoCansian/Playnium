@@ -35,7 +35,7 @@ async function carregarDetalhes(id) {
       <p><strong>Plataformas:</strong> ${plataformas}</p>
       <p><strong>Gêneros:</strong> ${generos}</p>
       <p><strong>Descrição:</strong> ${descricao}</p>
-      <a href="./html/playnium.html">⬅️ Voltar</a>
+      <a href="./playnium.html">⬅️ Voltar</a>
     `;
   } catch (error) {
     // Em caso de erro, exibe mensagem ao usuário
