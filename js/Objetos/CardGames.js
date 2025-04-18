@@ -83,7 +83,7 @@ class CardGame {
 
     // Redireciona para a página de detalhes do jogo
     gameElement.addEventListener("click", () => {
-      window.location.href = `jogo.html?id=${this.Id}`;
+      window.location.href = `./jogo.html?id=${this.Id}`;
     });
   }
 }
