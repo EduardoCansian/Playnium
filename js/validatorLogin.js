@@ -76,7 +76,7 @@ if (botaoCadastro) {
 
     // Verifica se as condições para cadastro serão atendidas
     if (!nome.value.trim()) {
-      mostrarErro(nome, "Nome é obrigatório");
+      mostrarErro(nome, " Nome é obrigatório");
       valido = false;
     }
     if (!validarCPF(cpf.value)) {

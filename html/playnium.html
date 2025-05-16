@@ -9,8 +9,15 @@
   <link rel="shortcut icon" href="../ico/playnium_control.png" type="image/x-icon">
 
   <!--Linkagem CSS-->
-
   <link rel="stylesheet" href="../css/playnium-style.css">
+
+  <!--Linkagem Bootstrap-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Bootstrap-Select JS + jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/js/bootstrap-select.min.js"></script>
+
 </head>
 
 <body>
@@ -31,7 +38,7 @@
     <form id="search-form">
       <!--Lista não ordenada para fazer a busca dos jogos-->
       <ul class="ul-search">
-        <li><input type="text" id="search-input" placeholder="Buscar por nome..."></li>
+        <li><input type="text" id="search-input" placeholder="Inserir nome..."></li>
         <li>
           <select id="genre-select">
             <option value="">Gênero</option>
@@ -61,7 +68,7 @@
             <option value="18">Xbox Series S/X</option>
           </select>
         </li>
-        <li><button type="submit" id="buscar">Buscar</button></li>
+        <li><button type="submit" id="buscar"><i class="bi bi-search"></i> Buscar</button></li>
         <div id="mensagem"></div>
       </ul>
     </form>

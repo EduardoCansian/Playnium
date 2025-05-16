@@ -51,6 +51,14 @@ body {
     position: relative;
     text-align: center;
     padding: 7px;
+    
+}
+
+.input-group-text{
+    color: #00f0ff;
+    margin-right: 5px;
+    background-color: transparent;
+    border: transparent;
 }
 
 #inputsenha {
@@ -139,6 +147,7 @@ body {
 .login-name {
     margin-top: 10px;
     margin-bottom: 30px;
+    margin-right: 195px;
 }
 
 .login-form-2 {
