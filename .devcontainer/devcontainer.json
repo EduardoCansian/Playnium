@@ -1,0 +1,49 @@
+{
+  "name": "PHP Web Dev Environment",
+  // Você pode usar uma imagem pré-construída com PHP e ferramentas comuns
+  // Ou usar uma imagem base e instalar o PHP via 'features' ou 'postCreateCommand'.
+  // Opção 1: Usar uma imagem universal com feature PHP
+  "image": "mcr.microsoft.com/devcontainers/universal:2-linux",
+  "features": {
+    // Instala PHP, Composer e algumas extensões comuns
+    "ghcr.io/devcontainers/features/php:1": {
+      "version": "8.2", // Especifique a versão do PHP desejada
+      "installComposer": "true"
+    }
+    // Opcional: Adicionar Node.js se precisar para ferramentas front-end
+    // "ghcr.io/devcontainers/features/node:1": {}
+  },
+
+  // Encaminha a porta que o servidor web PHP usará (ex: porta 8000)
+  "forwardPorts": [8000],
+  // Mapeia a porta para que ela abra automaticamente no navegador
+  "portsAttributes": {
+    "8000": {
+      "label": "Web Server",
+      "onAutoForward": "openPreview" // Ou "openBrowser"
+    }
+  },
+
+  // Configurações do VS Code dentro do Codespace (opcional)
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bmewburn.vscode-intelephense-client", // Inteligência de código PHP
+        "DEVSENSE.phptools-vscode",           // Outra opção para ferramentas PHP
+        "ms-azuretools.vscode-docker"         // Se for usar Docker no projeto
+        // Adicione outras extensões úteis (ex: GitLens, Prettier)
+      ],
+      "settings": {
+        // Configurações específicas do editor, se necessário
+        "files.eol": "\n"
+      }
+    }
+  },
+
+  // Comando executado após a criação do contêiner (opcional)
+  // Exemplo: Instalar dependências do Composer automaticamente
+   "postCreateCommand": "composer install || echo 'composer install failed or no composer.json found'"
+
+  // Se precisar de um banco de dados, pode usar features ou Docker Compose
+  // Veja a documentação do devcontainer para mais opções (ex: MySQL, PostgreSQL)
+}
