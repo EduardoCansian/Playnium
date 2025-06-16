@@ -34,3 +34,5 @@ switch ($metodo) {
         responder(['erro' => 'Método não permitido.'], 405);
         break;
 }
+
+?>

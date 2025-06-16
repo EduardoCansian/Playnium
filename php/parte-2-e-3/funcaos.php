@@ -72,3 +72,5 @@ function validarDados($dados) {
 
     return $erros;
 }
+
+?>

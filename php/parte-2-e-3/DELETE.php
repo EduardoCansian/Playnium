@@ -27,3 +27,5 @@ salvarDados($jogos);
 
 // Retorna o status 204 No Content, que significa sucesso sem conteúdo no corpo.
 responder(null, 204);
+
+?>

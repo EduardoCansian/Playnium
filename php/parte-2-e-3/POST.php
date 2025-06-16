@@ -27,3 +27,4 @@ salvarDados($jogos);
 
 // Retorna o novo jogo criado com o status 201
 responder($novoJogo, 201);
+?>

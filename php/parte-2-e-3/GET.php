@@ -21,3 +21,5 @@ if ($id !== null) {
     // Se nenhum ID foi passado, retorna a lista completa de jogos
     responder($jogos, 200);
 }
+
+?>

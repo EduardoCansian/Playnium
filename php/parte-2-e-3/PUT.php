@@ -43,3 +43,4 @@ $jogos[$indiceDoJogo] = [
 
 salvarDados($jogos);
 responder($jogos[$indiceDoJogo], 200);
+?>
