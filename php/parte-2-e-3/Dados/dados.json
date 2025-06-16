@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "nome": "The Witcher 3: Wild Hunt",
+        "ano_lancamento": 2015,
+        "plataforma": "PC"
+    },
+    {
+        "id": 2,
+        "nome": "Red Dead Redemption 2",
+        "ano_lancamento": 2018,
+        "plataforma": "PlayStation 4"
+    }
+]
