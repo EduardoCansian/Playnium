@@ -14,12 +14,27 @@ function responder($dados, $status_code = 200) {
     exit;
 }
 
+
+function validarUnicidade($novoJogo, $jogosExistentes) {
+    foreach ($jogosExistentes as $jogo) {
+        if (
+            strtolower($jogo['nome']) === strtolower($novoJogo['nome']) &&
+            intval($jogo['ano_lancamento']) === intval($novoJogo['ano_lancamento']) &&
+            strtolower($jogo['plataforma']) === strtolower($novoJogo['plataforma'])
+        ) {
+            return false;
+        }
+    }
+    return true;
+}
+
+
 /**
  * Carrega os dados do arquivo JSON.
  * Retorna um array vazio se o arquivo não existir.
  */
 function carregarDados() {
-    $caminho_arquivo = __DIR__ . '/db/dados.json';
+    $caminho_arquivo = __DIR__ . '/Dados/dados.json';
     if (!file_exists($caminho_arquivo)) {
         return [];
     }
@@ -32,7 +47,7 @@ function carregarDados() {
  * Garante que o array seja reindexado para evitar que se torne um objeto.
  */
 function salvarDados($dados) {
-    $caminho_arquivo = __DIR__ . '/db/dados.json';
+    $caminho_arquivo = __DIR__ . '/Dados/dados.json';
     $json = json_encode(array_values($dados), JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
     file_put_contents($caminho_arquivo, $json);
 }
@@ -40,7 +55,7 @@ function salvarDados($dados) {
 /**
  * Encontra o próximo ID disponível para um novo registro.
  */
-function getNextId($dados) {
+function PegarporId($dados) {
     if (empty($dados)) {
         return 1;
     }

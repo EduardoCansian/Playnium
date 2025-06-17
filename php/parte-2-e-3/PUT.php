@@ -1,4 +1,8 @@
 <?php
+require_once __DIR__ . '/funcaos.php';
+$caminho_arquivo = __DIR__ . '/Dados/dados.json';
+
+
 // PUT exige que um ID seja informado na URL
 if ($id === null) {
     responder(['erro' => 'É necessário informar um ID para atualização.'], 400);

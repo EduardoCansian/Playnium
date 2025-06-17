@@ -8,6 +8,7 @@ require_once 'funcaos.php';
 // Identifica o método HTTP da requisição (GET, POST, etc.)
 $metodo = $_SERVER['REQUEST_METHOD'];
 
+
 // Pega a URL e tenta extrair um ID numérico do final
 $uri = $_SERVER['REQUEST_URI'];
 $id = null;

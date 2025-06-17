@@ -1,6 +1,10 @@
 <?php
+
+require_once __DIR__ . '/funcaos.php';
+
 // Pega os dados enviados no corpo da requisição
 $dadosEntrada = json_decode(file_get_contents('php://input'), true);
+
 
 // Verifica se o JSON enviado é válido
 if (json_last_error() !== JSON_ERROR_NONE) {
@@ -13,10 +17,17 @@ if (!empty($erros)) {
     responder(['erros_validacao' => $erros], 400);
 }
 
-// Se a validação passou, cria o novo recurso
+// Carrega dados já existentes
 $jogos = carregarDados();
+
+// Validação de unicidade
+if (!validarUnicidade($dadosEntrada, $jogos)){
+    responder(['erro' => 'Jogo já cadastrado com mesmo nome, ano e plataforma.'], 400);
+    exit;
+}
+// Se a validação passou, cria o novo recurso
 $novoJogo = [
-    'id' => getNextId($jogos),
+    'id' => PegarporId($jogos),
     'nome' => $dadosEntrada['nome'],
     'ano_lancamento' => (int)$dadosEntrada['ano_lancamento'],
     'plataforma' => $dadosEntrada['plataforma']
